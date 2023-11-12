@@ -1,0 +1,44 @@
+
+<mat-card>
+  <mat-card-title>Sign-Up</mat-card-title>
+  <form [formGroup]="signInForm">
+    <div>
+      <mat-grid-list cols="1" rowHeight="100px">
+        <mat-grid-tile>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              placeholder="user@gmail.com"
+              formControlName="email"
+              required
+            >
+            <div *ngIf="email.invalid && (email.dirty || email!.touched)">
+              <mat-error *ngIf="email.errors?.['email']">You must enter valid addres.</mat-error>
+              <mat-error *ngIf="email.errors?.['required']">Email is required.</mat-error>
+            </div>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="write your password"
+              formControlName="password"
+              required
+            >
+              <mat-error *ngIf="password.errors?.['minlength']">Password must be at least 8 characters length.</mat-error>
+              <mat-error *ngIf="password.errors?.['required']">Password is required.</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <mat-card-actions align="end">
+      <button mat-button class="mat-button" (click)="cancelSignUp()">Cancel</button>
+      <button mat-button class="mat-button" (click)="signUp()">SignUp</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

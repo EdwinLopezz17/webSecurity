@@ -1,0 +1,17 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Jhon Hilton",
+      "age": 25,
+      "address": "No Were"
+    }
+  ],
+  "users": [
+    {
+      "email": "edwin@gmail.com",
+      "password": "$2a$10$OOm9sTIhBWl6ifArYeaPTOSd/nb7KgoYQJ6G1WgZ0mqKDhxdfeOyC",
+      "id": 1
+    }
+  ]
+}
